@@ -1,0 +1,23 @@
+<!-- La página en sí -->
+Testing
+
+
+
+<!-- La forma de "registro", lo puse solo para poder hacer el resto xd -->
+<form action="{% url 'index' %}" method="POST">
+    {% csrf_token %}
+
+    <input type="text" placeholder="Nombre completo" name="full_name" required="true">
+    <input type="text" placeholder="Matrícula" name="matricula" required="true">    
+    <input type="number" min="0" placeholder="Plantel" name="school" required="true">
+    <input type="number" min="100" placeholder="Grupo" name="group" required="true">
+
+    <textarea name="description"
+    cols="30" rows="10"
+    maxlength="1000"
+    style="resize: none;">Quiero entrar porque...</textarea>
+
+    <input type="text" placeholder="Preguntas" name="questions">
+
+    <button type="submit">Enviar!</button>
+</form>
