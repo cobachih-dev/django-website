@@ -1,9 +1,4 @@
-<!-- La página en sí -->
-Testing
-
-
-
-<!-- La forma de "registro", lo puse solo para poder hacer el resto xd -->
+<!-- Candidate registrer form -->
 <form action="{% url 'index' %}" method="POST">
     {% csrf_token %}
 
@@ -15,7 +10,7 @@ Testing
     <textarea name="description"
     cols="30" rows="10"
     maxlength="1000"
-    style="resize: none;">Quiero entrar porque...</textarea>
+    style="resize: none;">Me gustaría entrar porque...</textarea>
 
     <input type="text" placeholder="Preguntas" name="questions">
 
