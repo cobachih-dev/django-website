@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         {% block title %}
-            Informatica cobach
+            COBACH
         {% endblock  %}
     </title>
     <!-- CSS only -->
+    {% load static %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/cover.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
-<body>
-    {% include "header.html" %}
-    <div class="container">
-        {% include "website/candidate_registrer_form.html" %}
-    </div>
+<body class="text-center vsc-initialized">
+    {% block container %}
+    {% endblock container %}
 </body>
 </html>

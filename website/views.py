@@ -9,4 +9,4 @@ def index(request):
         if form.is_valid():
             form.save()
 
-    return render(request, 'base.html')
+    return render(request, 'website/home.html')

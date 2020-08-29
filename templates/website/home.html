@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Paraescolar Programacion |
+    {{ block.super }}
+{% endblock title %}
+
+{% block container %}
+    <div class="cover-background">
+        <div class="body">
+            <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            {% include "header.html" %}
+                <main role="main" class="inner cover">
+                    <h1 class="cover-heading">
+                        Club de Programación
+                    </h1>
+                    <p class="lead">
+                        Te invitamos a conocer nuestra paraescolar
+                        de programación, un lugar donde podrás desarrollar habilidades matemáticas y lógicas en la contrucción y razonamiento de código!
+                    </p>
+                    <p class="lead">
+                    <a href="#" class="btn btn-lg btn-secondary">Ver mas..</a>
+                    </p>
+                </main>
+                <footer class="mastfoot mt-auto">
+                    <div class="inner">
+                    <p>Webpage for <a href="https://getbootstrap.com/">COBACH</a>, by <a href="https://twitter.com/mdo">Club de Programacion</a>.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 ">
+        {% include "website/description.html" %}
+    </div>
+    <div class="container mt-5 ">
+        {% include "website/schedule.html" %}
+    </div>
+    <div class="container mt-5 ">
+    </div>
+    <div class="container mt-5 mb-5">
+        {% include "website/candidate_registrer_form.html" %}
+    </div>
+
+{% endblock container %}
