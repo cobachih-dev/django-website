@@ -1,0 +1,14 @@
+.people-photo{
+    object-fit: cover;
+}
+.image-container{
+    padding: 20px;
+}
+.community-cards-container .card{
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border: none;
+}
+.community-cards-container .people-photo{
+    border: 10px solid #2b85e6;
+}
