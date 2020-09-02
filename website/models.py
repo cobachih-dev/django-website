@@ -10,13 +10,9 @@ class Candidate(models.Model):
     description = models.TextField(max_length=1000, blank=True)
     questions = models.TextField(max_length=255, blank=True)
 
-class CandidateForm(ModelForm):
-    class Meta:
-        model = Candidate
-        fields = [
-            'full_name',
-            'matricula', 
-            'school', 
-            'group', 
-            'description',
-            'questions']
+class School(models.Model):
+    image = models.ImageField(upload_to='logos')
+    school_name = models.CharField(max_length=30)
+    week_day = models.CharField(max_length=20)
+    starting_time = models.TimeField(auto_now=False, auto_now_add=False)
+    ending_time = models.TimeField(auto_now=False, auto_now_add=False)
