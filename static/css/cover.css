@@ -34,7 +34,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   color: #fff;
-  background-color: #20355c93;
+  background: rgb(24,23,31);
+  background: linear-gradient(45deg, rgba(24,23,31,0.5046393557422969) 0%, rgba(32,108,228,0.5) 47%, rgba(39,203,127,0.5) 85%);
   text-shadow: 0 .05rem .1rem #00000080;
   box-shadow: inset 0 0 5rem #00000080;
 }
