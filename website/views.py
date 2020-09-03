@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import CandidateForm
+from .forms import CandidateForm
 
 def index(request):
     if request.method == 'POST':
-        print('Smn jala')
         form = CandidateForm(request.POST)
         if form.is_valid():
             form.save()
