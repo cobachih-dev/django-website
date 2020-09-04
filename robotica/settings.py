@@ -20,8 +20,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
 
+#SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'xiu3hj8CJH()/WRY)(CD"/#YXh8o7yrdabo8wreaowiuet'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'robotica.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd2um9nkffooqav',
+        'USER': 'pyiktyzxovztbc',
+        'PASSWORD': '1b845ed81ee76406c86f1a71da78172249a70ada5d56a7f982c6c2d3033d6781',
+        'HOST': 'ec2-54-224-124-241.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -129,17 +134,12 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates/'),
 )
 
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')

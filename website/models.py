@@ -16,3 +16,11 @@ class School(models.Model):
     week_day = models.CharField(max_length=20)
     starting_time = models.TimeField(auto_now=False, auto_now_add=False)
     ending_time = models.TimeField(auto_now=False, auto_now_add=False)
+
+class Olympian(models.Model):
+    full_name = models.CharField(max_length=255)
+    school = models.CharField(max_length=15)
+    picture = models.ImageField(upload_to='olympians')
+    participations = models.CharField(max_length=50)
+    languages = models.CharField(max_length=255)
+    career = models.CharField(max_length=200)
