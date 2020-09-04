@@ -20,7 +20,7 @@ class School(models.Model):
 class Olympian(models.Model):
     full_name = models.CharField(max_length=255)
     school = models.CharField(max_length=15)
-    picture = models.ImageField(upload_to='olympians')
+    picture = models.URLField(default='')
     participations = models.CharField(max_length=50)
     languages = models.CharField(max_length=255)
     career = models.CharField(max_length=200)
