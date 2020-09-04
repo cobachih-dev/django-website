@@ -1,1 +1,1 @@
-web: gunicorn robotica.asgi:application
+web: gunicorn robotica.wsgi:application
