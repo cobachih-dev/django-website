@@ -11,7 +11,7 @@ class Candidate(models.Model):
     questions = models.TextField(max_length=255, blank=True)
 
 class School(models.Model):
-    image = models.ImageField(upload_to='logos')
+    image = models.ImageField(upload_to='schools')
     school_name = models.CharField(max_length=30)
     week_day = models.CharField(max_length=20)
     starting_time = models.TimeField(auto_now=False, auto_now_add=False)
