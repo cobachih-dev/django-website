@@ -20,9 +20,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'asjdiiausdhaiouds5g773567w56'
 
-#SECRET_KEY = os.environ['SECRET_KEY']
-SECRET_KEY = 'xiu3hj8CJH()/WRY)(CD"/#YXh8o7yrdabo8wreaowiuet'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -43,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'robotica.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd2um9nkffooqav',
-        'USER': 'pyiktyzxovztbc',
-        'PASSWORD': '1b845ed81ee76406c86f1a71da78172249a70ada5d56a7f982c6c2d3033d6781',
-        'HOST': 'ec2-54-224-124-241.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -125,8 +121,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates/'),
 )
 
 STATICFILES_FINDERS = [
@@ -134,12 +130,21 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
-PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-
-
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates/'),
-)
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "django": {"handlers": ["console"], "level": "INFO"},
+    },
+}
