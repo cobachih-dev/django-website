@@ -7,7 +7,7 @@ class Candidate(models.Model):
     matricula = models.CharField(max_length=30)
     school = models.IntegerField()
     group = models.IntegerField()
-    email = models.EmailField()
+    email = models.EmailField(default='defaultemail@default.com')
     questions = models.TextField(max_length=255, blank=True)
 
 class School(models.Model):
