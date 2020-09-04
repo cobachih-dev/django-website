@@ -22,6 +22,6 @@ class Olympian(models.Model):
     school = models.CharField(max_length=15)
     picture = models.URLField(default='')
     participations = models.CharField(max_length=50)
-    achievements = models.CharField(max_length=500)
+    achievements = models.CharField(max_length=500, default='')
     languages = models.CharField(max_length=255)
     career = models.CharField(max_length=200)
