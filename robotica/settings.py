@@ -80,13 +80,7 @@ WSGI_APPLICATION = 'robotica.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'CONN_MAX_AGE': 500
-    }
-}
+DATABASES = {}
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
@@ -142,24 +136,3 @@ MEDIA_URL = '/media/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-       'file': {
-           'level': 'DEBUG',
-           'class': 'logging.FileHandler',
-           'filename': 'log.django',
-       },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console','file'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-        },
-    },
-}

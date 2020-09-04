@@ -8,6 +8,6 @@ class CandidateForm(ModelForm):
             'full_name',
             'matricula', 
             'school', 
-            'group', 
-            'description',
+            'group',
+            'email',
             'questions']
