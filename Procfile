@@ -1,1 +1,1 @@
-web: gunicorn robotica.asgi
+web: gunicorn robotica.asgi:application
