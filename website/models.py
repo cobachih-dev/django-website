@@ -14,8 +14,11 @@ class School(models.Model):
     image = models.ImageField(upload_to='schools')
     school_name = models.CharField(max_length=30)
     week_day = models.CharField(max_length=20)
-    starting_time = models.TimeField(auto_now=False, auto_now_add=False)
-    ending_time = models.TimeField(auto_now=False, auto_now_add=False)
+    morning_starting_time = models.CharField(max_length=50, default='')
+    morning_ending_time = models.CharField(max_length=50, default='')
+    evening_starting_time = models.CharField(max_length=50, default='')
+    evening_ending_time = models.CharField(max_length=50, default='')
+
 
 class Olympian(models.Model):
     full_name = models.CharField(max_length=255)
