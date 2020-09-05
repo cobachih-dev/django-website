@@ -6,6 +6,8 @@ background: rgb(24,23,31);
 background: linear-gradient(45deg, rgba(24,23,31,0.5046393557422969) 0%, rgba(32,108,228,0.5) 47%, rgba(39,203,127,0.5) 85%);
 
 footer:
+background: rgb(31,30,38);
+background: linear-gradient(45deg, rgba(31,30,38,1) 8%, rgba(4,40,96,1) 64%, rgba(5,51,30,1) 99%);
 
 */
 .people-photo{
@@ -19,8 +21,13 @@ footer:
     border-radius: 10px;
     border: none;
 }
+.badge{
+    font-size: 12px;
+}
 .community-cards-container .people-photo{
     border: 10px solid #2b85e6;
+    object-position: center center;
+    background-color: #2b85e6;
 }
 .footer{
     background: rgb(31,30,38);

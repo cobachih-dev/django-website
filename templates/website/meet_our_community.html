@@ -5,126 +5,34 @@
     </h1>
     <div class="community-cards-container">
         <div class="row row-cols-2 justify-content-center row-cols-md-3 row-cols-lg-4">
-            <div class="col mb-4">
-                <div class="card h-100">
-                <div class="image-container">
-                    <div class="photo-container embed-responsive embed-responsive-1by1">
-                        <img src="{% static 'img/picture-example-1.jpg' %}" class="card-img-top embed-responsive-item rounded-circle people-photo" alt="..." >
+            {% for olympian in olympians %}
+                <div class="col mb-4">
+                    <div class="card h-100">
+                    <div class="image-container">
+                        <div class="photo-container embed-responsive embed-responsive-1by1">
+                            <img src="https://drive.google.com/uc?export=view&id={{ olympian.picture }}" class="card-img-top embed-responsive-item rounded-circle people-photo" alt="..." >
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h6>Plantel {{ olympian.school }}</h6>
+                        <h5 class="card-title">{{ olympian.full_name }}</h5>
+                        {% for language in olympian.languages %}
+                            <span class="badge badge-{% if language == "Python"%}primary{% elif language == "Javascript"%}warning{% elif language == "C++"%}info{% elif language == "C"%}success{% elif language == "C#"%}dark{% elif language == "HTML"%}light{% elif language == "Java"%}danger{% else %}secondary{% endif %}
+                            ">
+                                {{ language }}
+                            </span>
+                        {% endfor %}
+                        <p class="card-text">
+                            <div class="h6">OMI: {{ olympian.participations }}</div>
+                            <div class="h6">Logros:</div>
+                            {{ olympian.achievements }}
+                            <div class="h6">Estudios o carrera:</div>
+                            {{ olympian.career }}
+                        </p>
+                    </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title Card</h5>
-                    <p class="card-text">
-                        This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    </p>
-                </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                <div class="image-container">
-                    <div class="photo-container embed-responsive embed-responsive-1by1">
-                        <img src="{% static 'img/picture-example-1.jpg' %}" class="card-img-top embed-responsive-item rounded-circle people-photo" alt="..." >
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title Card</h5>
-                    <p class="card-text">
-                        This is a short card.
-                    </p>
-                </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                <div class="image-container">
-                    <div class="photo-container embed-responsive embed-responsive-1by1">
-                        <img src="{% static 'img/picture-example-1.jpg' %}" class="card-img-top embed-responsive-item rounded-circle people-photo" alt="..." >
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title Card</h5>
-                    <p class="card-text">
-                        This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    </p>
-                </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                <div class="image-container">
-                    <div class="photo-container embed-responsive embed-responsive-1by1">
-                        <img src="{% static 'img/picture-example-1.jpg' %}" class="card-img-top embed-responsive-item rounded-circle people-photo" alt="..." >
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title Card</h5>
-                    <p class="card-text">
-                        This is a short card.
-                    </p>
-                </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                <div class="image-container">
-                    <div class="photo-container embed-responsive embed-responsive-1by1">
-                        <img src="{% static 'img/picture-example-1.jpg' %}" class="card-img-top embed-responsive-item rounded-circle people-photo" alt="..." >
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title Card</h5>
-                    <p class="card-text">
-                        This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    </p>
-                </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                <div class="image-container">
-                    <div class="photo-container embed-responsive embed-responsive-1by1">
-                        <img src="{% static 'img/picture-example-1.jpg' %}" class="card-img-top embed-responsive-item rounded-circle people-photo" alt="..." >
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title Card</h5>
-                    <p class="card-text">
-                        This is a short card.
-                    </p>
-                </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                <div class="image-container">
-                    <div class="photo-container embed-responsive embed-responsive-1by1">
-                        <img src="{% static 'img/picture-example-1.jpg' %}" class="card-img-top embed-responsive-item rounded-circle people-photo" alt="..." >
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title Card</h5>
-                    <p class="card-text">
-                        This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    </p>
-                </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                <div class="image-container">
-                    <div class="photo-container embed-responsive embed-responsive-1by1">
-                        <img src="{% static 'img/picture-example-1.jpg' %}" class="card-img-top embed-responsive-item rounded-circle people-photo" alt="..." >
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Title Card</h5>
-                    <p class="card-text">
-                        This is a short card.
-                    </p>
-                </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
