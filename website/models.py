@@ -13,9 +13,12 @@ class Candidate(models.Model):
 class School(models.Model):
     image = models.ImageField(upload_to='schools')
     school_name = models.CharField(max_length=30)
-    week_day = models.CharField(max_length=20)
+
+    morning_week_day = models.CharField(max_length=20, default='')
     morning_starting_time = models.CharField(max_length=50, default='')
     morning_ending_time = models.CharField(max_length=50, default='')
+
+    evening_week_day = models.CharField(max_length=20, default='')
     evening_starting_time = models.CharField(max_length=50, default='')
     evening_ending_time = models.CharField(max_length=50, default='')
 
