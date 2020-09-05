@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
-<body class="text-center vsc-initialized">
+<body class="text-center vsc-initialized" data-spy="scroll" data-target="#header" data-offset="0">
+    <div class="bk-header fixed-top"></div>
     {% block container %}
     {% endblock container %}
     {% include "footer.html" %}
