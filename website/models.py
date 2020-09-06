@@ -12,7 +12,7 @@ class Candidate(models.Model):
 
 class School(models.Model):
     image = models.ImageField(upload_to='schools')
-    school_name = models.CharField(max_length=30)
+    school_name= models.IntegerField()
 
     morning_week_day = models.CharField(max_length=20, default='')
     morning_starting_time = models.CharField(max_length=50, default='')
