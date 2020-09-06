@@ -9,26 +9,52 @@
                     <img src="https://drive.google.com/uc?export=view&id=1LYxbcoGr-xHD10ai9fIXnQIAjcV0r3h8" class="card-img-top embed-responsive-item people-photo" alt="..." >
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Saul Alejandro Tapia Loya</h5>
+                    <h3>
                     <span class="badge badge-primary">BACKEND</span>
-                    <p class="card-text">
-                        This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                    </p>
+                    </h3>
+                    <h5 class="card-title">
+                    Saul Alejandro Tapia Loya
+                    </h5>
+                    {% for language in thanks_saul %}
+                        <span class="badge badge-{% if language == "Python"%}primary{% elif language == "Javascript"%}warning{% elif language == "C++"%}info{% elif language == "C"%}success{% elif language == "C#"%}dark{% elif language == "HTML"%}light{% elif language == "Java"%}danger{% else %}secondary{% endif %}">
+                            {{ language }}
+                        </span>
+                    {% endfor %}
+                    <div class="text">
+                        <h6>
+                            Plantel 8
+                        </h6>
+                        <p class="card-text">
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-10 col-md mb-4">
             <div class="card h-100">
-            <div class="photo-container embed-responsive embed-responsive-1by1">
-                <img src="https://drive.google.com/uc?export=view&id=1LBfYX85sorZ4hijASpMytW96OWvFavlV" class="card-img-top embed-responsive-item people-photo" alt="..." >
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Adrian Alejandro Gonzalez Dominguez </h5>
-                <span class="badge badge-success">FRONTEND</span>
-                <p class="card-text">
-                    This is a short card.
-                </p>
-            </div>
+                <div class="photo-container embed-responsive embed-responsive-1by1">
+                    <img src="https://drive.google.com/uc?export=view&id=1LBfYX85sorZ4hijASpMytW96OWvFavlV" class="card-img-top embed-responsive-item people-photo" alt="..." >
+                </div>
+                <div class="card-body">
+                    <h3>
+                    <span class="badge badge-success">FRONTEND</span>
+                    </h3>
+                    <h5 class="card-title">
+                    Adrian Alejandro Gonzalez Dominguez 
+                    </h5>
+                    {% for language in thanks_adrian %}
+                        <span class="badge badge-{% if language == "Python"%}primary{% elif language == "Javascript"%}warning{% elif language == "C++"%}info{% elif language == "C"%}success{% elif language == "C#"%}dark{% elif language == "HTML"%}light{% elif language == "Java"%}danger{% else %}secondary{% endif %}">
+                            {{ language }}
+                        </span>
+                    {% endfor %}
+                    <div class="text">
+                        <h6>
+                            Plantel 4
+                        </h6>
+                        <p class="card-text">
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

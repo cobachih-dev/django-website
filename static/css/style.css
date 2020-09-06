@@ -14,7 +14,7 @@ background: linear-gradient(45deg, rgba(31,30,38,1) 8%, rgba(4,40,96,1) 64%, rgb
     color: #ffffff!important;
     border-bottom-color: #ffffff!important;
 }
-.nav-link{
+.nav-masthead .nav-link{
     color: #d4d4d4!important;
 }
 header{
@@ -42,7 +42,10 @@ body{
     background: linear-gradient(180deg, rgba(246,246,246,0.7987570028011204) 0%, rgba(222,222,222,0.7959558823529411) 100%);
     padding: 1em;
 }
-
+.dropdown .nav-link.active,
+.dropdown .nav-link:active{
+    color: #ffffff!important;
+}
 .people-photo{
     object-fit: cover;
 }
@@ -53,9 +56,6 @@ body{
     background-color: #f0f0f0;
     border-radius: 10px;
     border: none;
-}
-.badge{
-    font-size: 12px;
 }
 .community-cards-container .people-photo{
     border: 10px solid #2b85e6;

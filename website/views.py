@@ -12,7 +12,10 @@ def index(request):
 
     context={
         "olympians": Olympian.objects.all().order_by("participations","full_name", "id"),
-        "schools": School.objects.all(),
+        "schools": School.objects.all().order_by("school_name"),
+        "thanks_saul": ['C++','SQL','Python'],
+        "thanks_adrian": ['C++', 'Python', 'HTML', 'CSS', 'Javascript', 'SQL'],
+        
     }
     # k=1
     for school in context["schools"]:

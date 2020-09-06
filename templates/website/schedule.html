@@ -1,6 +1,6 @@
 <div class="container content-text ">
-    <div class="row">
-        <div class="col-12 col-lg tab-content" id="nav-tabContent">
+    <div class="row justify-content-center">
+        <div class="col-11 col-lg tab-content" id="nav-tabContent">
             {% for school in schools %}
                 <div class="tab-pane fade" id="nav-{{ school.school_name }}" role="tabpanel" aria-labelledby="nav-{{ school.school_name }}-tab">
                     <div class="school-card d-lg-flex align-items-center justify-content-around">
@@ -13,7 +13,7 @@
                                 <h6>Turno Matutino</h6>
                                 <h5>{{ school.morning_week_day }}</h5>
                                 {{ school.morning_starting_time}} - {{school.morning_ending_time }}
-                                <br>
+                                <p></p>
                                 <h6>Turno Vespertino</h6>
                                 <h5>{{ school.evening_week_day }}</h5>
                                 {{ school.evening_starting_time}} - {{school.evening_ending_time }}
@@ -24,7 +24,7 @@
             {% endfor %}
         </div>
 
-        <div class="col text-justify text-lg-right order mb-3 mb-lg-0">
+        <div class="col-11 col-lg text-justify text-lg-right order mb-3 mb-lg-0">
             <h1 class="h1 mb-4 text-center text-lg-right">
                 Nuestros horarios
             </h1>
