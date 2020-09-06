@@ -11,7 +11,8 @@ class Candidate(models.Model):
     questions = models.TextField(max_length=255, blank=True)
 
 class School(models.Model):
-    image = models.ImageField(upload_to='schools')
+    
+    image = models.URLField(default='')
     school_name= models.IntegerField()
 
     morning_week_day = models.CharField(max_length=20, default='')
