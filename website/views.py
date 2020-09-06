@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from .forms import CandidateForm
-from .models import Olympian
+from .models import Olympian, School
 
 def index(request):
     if request.method == 'POST':
@@ -11,15 +11,22 @@ def index(request):
             form.save()
 
     context={
-        "olympians": Olympian.objects.all().order_by("-participations","id")
+        "olympians": Olympian.objects.all().order_by("participations","full_name", "id"),
+        "schools": School.objects.all(),
     }
     # k=1
+    for school in context["schools"]:
+        school.image=school.image.split("/d/")
+        school.image=school.image[1]
+        school.image=school.image.replace("/view?usp=sharing","")
+        school.school_name=int(school.school_name)
+
     for olympian in context["olympians"]:
         """ print(str(k)+".- "+str(olympian.id)+" - "+ olympian.full_name)
         k+=1 """
         olympian.languages=olympian.languages.split(", ")
         olympian.picture=olympian.picture.split("id=")
         olympian.picture=olympian.picture[1]
-
+    
     # https://drive.google.com/u/0/open?usp=forms_web&id=1LBfYX85sorZ4hijASpMytW96OWvFavlV
     return render(request, 'website/home.html', context=context)

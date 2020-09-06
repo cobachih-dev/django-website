@@ -1,18 +1,48 @@
-<div class="content-text text-justify offset-lg-6 col-lg-6 text-lg-right">
-    <h1 class="h1 mb-4 text-center text-lg-right">
-        Nuestros horarios
-    </h1>
-    <div class="p">
-        Los horarios del paraescolar dependen del Plantel. Si te interesa conocerlos por favor selecciona tu plantel:
-    </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="submmit" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Selecciona tu plantel
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+<div class="container content-text ">
+    <div class="row">
+        <div class="col-12 col-lg tab-content" id="nav-tabContent">
+            {% for school in schools %}
+                <div class="tab-pane fade" id="nav-{{ school.school_name }}" role="tabpanel" aria-labelledby="nav-{{ school.school_name }}-tab">
+                    <div class="school-card d-lg-flex align-items-center justify-content-around">
+                        <div class="school">
+                            <img src="https://drive.google.com/uc?export=view&id={{school.image}}" alt="" style="height:10rem; widht:10em" class="img-fluid">
+                            <h1>Plantel {{school.school_name}}</h1>
+                        </div>
+                        <div class="date-time d-flex align-items-center justify-content-center">
+                            <div class="times">
+                                <h6>Turno Matutino</h6>
+                                <h5>{{ school.morning_week_day }}</h5>
+                                {{ school.morning_starting_time}} - {{school.morning_ending_time }}
+                                <br>
+                                <h6>Turno Vespertino</h6>
+                                <h5>{{ school.evening_week_day }}</h5>
+                                {{ school.evening_starting_time}} - {{school.evening_ending_time }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="col text-justify text-lg-right order mb-3 mb-lg-0">
+            <h1 class="h1 mb-4 text-center text-lg-right">
+                Nuestros horarios
+            </h1>
+            <p>
+                Los horarios del paraescolar dependen del Plantel. Si te interesa conocerlos por favor selecciona tu plantel:
+            </p>
+            <div class="nav dropdown d-block">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Selecciona tu plantel
+                </button>
+                <div class="dropdown-menu">
+                    {% for school in schools %}
+                        <a class="nav-link dropdown-item" id="nav-{{ school.school_name }}-tab" data-toggle="tab" href="#nav-{{ school.school_name }}" role="tab" aria-controls="nav-{{ school.school_name }}" aria-selected="false">
+                            Plantel {{ school.school_name }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
