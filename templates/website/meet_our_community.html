@@ -17,10 +17,10 @@
                         <h6>Plantel {{ olympian.school }}</h6>
                         <h5 class="card-title">{{ olympian.full_name }}</h5>
                         {% for language in olympian.languages %}
-                            <span class="badge badge-{% if language == "Python"%}primary{% elif language == "Javascript"%}warning{% elif language == "C++"%}info{% elif language == "C"%}success{% elif language == "C#"%}dark{% elif language == "HTML"%}light{% elif language == "Java"%}danger{% else %}secondary{% endif %}
+                            <a class="badge badge-{% if language == "Python"%}primary{% elif language == "Javascript"%}warning{% elif language == "C++"%}info{% elif language == "C"%}success{% elif language == "C#"%}dark{% elif language == "HTML"%}light{% elif language == "Java"%}danger{% else %}secondary{% endif %}
                             ">
                                 {{ language }}
-                            </span>
+                            </a>
                         {% endfor %}
                         <p class="card-text">
                             <div class="h6">OMI: {{ olympian.participations }}</div>

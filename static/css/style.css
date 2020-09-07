@@ -10,12 +10,24 @@ background: rgb(31,30,38);
 background: linear-gradient(45deg, rgba(31,30,38,1) 8%, rgba(4,40,96,1) 64%, rgba(5,51,30,1) 99%);
 
 */
+::-webkit-scrollbar{
+    width: 15px;
+    background: rgb(0,56,54);
+    background: linear-gradient(180deg, rgba(0,56,54,1) 0%, rgba(0,21,59,1) 100%);
+    box-shadow: 10px 10px 30px 3px #459fff;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(59,255,164);
+    background: linear-gradient(180deg, rgba(59,255,164,1) 0%, rgba(42,139,255,1) 100%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 3px #b9dbff;
+}
 .nav-masthead .active{
     color: #ffffff!important;
     border-bottom-color: #ffffff!important;
 }
 .nav-masthead .nav-link{
-    color: #d4d4d4!important;
+    color: #d4d4d4;
 }
 header{
     max-width: 60em;
@@ -42,6 +54,16 @@ body{
     background: linear-gradient(180deg, rgba(246,246,246,0.7987570028011204) 0%, rgba(222,222,222,0.7959558823529411) 100%);
     padding: 1em;
 }
+.cobach-title{
+    font-size: 30px;
+}
+img.github-btn{
+    border-radius: 50%;
+}
+img.github-btn:hover {
+    box-shadow: 5px 5px 20px 0px #bababa;
+    filter: brightness(0.9);
+}
 .dropdown .nav-link.active,
 .dropdown .nav-link:active{
     color: #ffffff!important;
@@ -66,9 +88,20 @@ body{
     background: rgb(31,30,38);
     background: linear-gradient(45deg, rgba(31,30,38,1) 8%, rgba(4,40,96,1) 64%, rgba(5,51,30,1) 99%);
 }
-
+.icon-arrow-1{
+    display: inline;
+}
+.icon-arrow-2{
+    display: none;
+}
 @media (max-width: 991.98px) { 
     .order{
         order: -1;
+    }
+    .icon-arrow-1{
+        display: none;
+    }
+    .icon-arrow-2{
+        display: inline;
     }
  }

@@ -2,6 +2,7 @@
     <h3 class="h3 mb-4">
         Esta pagina es posible gracias a los alumnos:
     </h3>
+    {% load static %}
     <div class="row row-cols-1  row-cols-md-2 justify-content-center">
         <div class="col-10 col-md mb-4">
             <div class="card h-100">
@@ -9,22 +10,26 @@
                     <img src="https://drive.google.com/uc?export=view&id=1LYxbcoGr-xHD10ai9fIXnQIAjcV0r3h8" class="card-img-top embed-responsive-item people-photo" alt="..." >
                 </div>
                 <div class="card-body">
-                    <h3>
-                    <span class="badge badge-primary">BACKEND</span>
+                    <h3 class="d-flex justify-content-center align-items-center">
+                    <a class="badge badge-primary">BACKEND</a>
+                    <a href="https://github.com/SaulTapia" target="_blank" >
+                        <img class="github-btn" src="{% static 'img/github.png' %}" alt="" style="margin-left:10px; height:1.5em; width:1.5em;">
+                    </a>
                     </h3>
                     <h5 class="card-title">
                     Saul Alejandro Tapia Loya
                     </h5>
                     {% for language in thanks_saul %}
-                        <span class="badge badge-{% if language == "Python"%}primary{% elif language == "Javascript"%}warning{% elif language == "C++"%}info{% elif language == "C"%}success{% elif language == "C#"%}dark{% elif language == "HTML"%}light{% elif language == "Java"%}danger{% else %}secondary{% endif %}">
+                        <a class="badge badge-{% if language == "Python"%}primary{% elif language == "Javascript"%}warning{% elif language == "C++"%}info{% elif language == "C"%}success{% elif language == "C#"%}dark{% elif language == "HTML"%}light{% elif language == "Java"%}danger{% else %}secondary{% endif %}">
                             {{ language }}
-                        </span>
+                        </a>
                     {% endfor %}
                     <div class="text">
                         <h6>
                             Plantel 8
                         </h6>
                         <p class="card-text">
+                            Tengo 16 años y me apasiona la programación, actualmente estoy estudiando desarrollo Backend e Inteligencia artificial, y si de algo estoy seguro, es que programaré mi futuro linea por linea.
                         </p>
                     </div>
                 </div>
@@ -36,22 +41,26 @@
                     <img src="https://drive.google.com/uc?export=view&id=1LBfYX85sorZ4hijASpMytW96OWvFavlV" class="card-img-top embed-responsive-item people-photo" alt="..." >
                 </div>
                 <div class="card-body">
-                    <h3>
-                    <span class="badge badge-success">FRONTEND</span>
+                    <h3 class="d-flex justify-content-center align-items-center">
+                    <a class="badge badge-info">FRONTEND</a>
+                    <a href="https://github.com/Adrigondo2" target="_blank">
+                        <img class="github-btn" src="{% static 'img/github.png' %}" alt="" style="margin-left:10px; height:1.5em; width:1.5em;">
+                    </a>
                     </h3>
                     <h5 class="card-title">
-                    Adrian Alejandro Gonzalez Dominguez 
+                    Adrián Alejandro González Dominguez 
                     </h5>
                     {% for language in thanks_adrian %}
-                        <span class="badge badge-{% if language == "Python"%}primary{% elif language == "Javascript"%}warning{% elif language == "C++"%}info{% elif language == "C"%}success{% elif language == "C#"%}dark{% elif language == "HTML"%}light{% elif language == "Java"%}danger{% else %}secondary{% endif %}">
+                        <a class="badge badge-{% if language == "Python"%}primary{% elif language == "Javascript"%}warning{% elif language == "C++"%}info{% elif language == "C"%}success{% elif language == "C#"%}dark{% elif language == "HTML"%}light{% elif language == "Java"%}danger{% else %}secondary{% endif %}">
                             {{ language }}
-                        </span>
+                        </a>
                     {% endfor %}
                     <div class="text">
                         <h6>
                             Plantel 4
                         </h6>
                         <p class="card-text">
+                            Tengo 17 años, y me encanta programar. El 2019 fuí al nacional de informática; he utilizado multiples lenguajes, y aunque ahora estudio Desarrollo Web en Backend y Frontend, no prondré limítes al aprendizaje.
                         </p>
                     </div>
                 </div>
