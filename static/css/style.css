@@ -88,8 +88,13 @@ img.github-btn:hover {
     background: rgb(31,30,38);
     background: linear-gradient(45deg, rgba(31,30,38,1) 8%, rgba(4,40,96,1) 64%, rgba(5,51,30,1) 99%);
 }
-@media (max-width: 991.98px) { 
+@media (max-width: 992px) { 
     .order{
         order: -1;
     }
- }
+}
+@media (max-width: 576px) {
+    main .h1{
+        font-size: 40px;
+    }
+}
