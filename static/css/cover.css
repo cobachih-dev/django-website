@@ -3,9 +3,9 @@
  */
 
 /* Links */
-a,
-a:focus,
-a:hover {
+main a,
+main a:focus,
+main a:hover {
   color: #fff;
 }
 
