@@ -1,3 +1,3 @@
 # django-website
 
-https://www.cobachih.dev/
+Django app for our Programming Club
