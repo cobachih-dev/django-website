@@ -9,6 +9,8 @@ class Candidate(models.Model):
     group = models.IntegerField()
     email = models.EmailField(default='defaultemail@default.com')
     questions = models.TextField(max_length=255, blank=True)
+    def __str__(self):
+        return self.full_name
 
 class School(models.Model):
     
@@ -22,6 +24,9 @@ class School(models.Model):
     evening_week_day = models.CharField(max_length=20, default='')
     evening_starting_time = models.CharField(max_length=50, default='')
     evening_ending_time = models.CharField(max_length=50, default='')
+    
+    def __str__(self):
+        return self.school_name
 
 
 class Olympian(models.Model):
@@ -32,3 +37,7 @@ class Olympian(models.Model):
     achievements = models.CharField(max_length=500, default='')
     languages = models.CharField(max_length=255)
     career = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.full_name
+    
