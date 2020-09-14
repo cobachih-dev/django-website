@@ -26,7 +26,7 @@ class School(models.Model):
     evening_ending_time = models.CharField(max_length=50, default='')
     
     def __str__(self):
-        return self.school_name
+        return str(self.school_name)
 
 
 class Olympian(models.Model):
